@@ -14,12 +14,12 @@ class BaseConfig(BaseSettings):
 class GlobalConfig(BaseConfig):
     DATABASE_URL: Optional[str] = None
     DB_FORCE_ROLL_BACK: bool = False
+    LOGTAIL_API_KEY: Optional[str] = None
 
 
 class DevConfig(BaseConfig):
     DATABASE_URL: str = "sqlite:///dev.db"
     DB_FORCE_ROLL_BACK: bool = True
-    log_level: str = "DEBUG"
 
     model_config = {"env_prefix": "DEV_"}
 
